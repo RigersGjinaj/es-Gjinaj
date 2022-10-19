@@ -2,6 +2,7 @@ package com.example;
 
 import java.net.Socket;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -10,10 +11,12 @@ public class ClientHendler extends Thread {
     private Socket s;
     private static int numUtente = 0;
     private String nomeServer;
+    private ArrayList<Socket> collegati = new ArrayList<Socket>();
 
     public ClientHendler(Socket s, String nomeServer) {
         this.s = s;
         this.nomeServer = nomeServer;
+        collegati.add(s);
     }
 
     public void run() {
