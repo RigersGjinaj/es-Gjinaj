@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 public class ClientHendler extends Thread {
     private Socket s;
     private static int numUtente = 0;
+    private int id = 0;
 
     public ClientHendler(Socket s) {
         this.s = s;
@@ -25,7 +26,8 @@ public class ClientHendler extends Thread {
             String nome = br.readLine();
             nome.toUpperCase();
             numUtente++;
-            pr.println("Benvenuto: " + nome + "sei l'utente numero " + numUtente);
+            id = numUtente;
+            pr.println("Benvenuto: " + nome + " sei l'utente numero " + id);
             s.close();
 
         } catch (Exception e) {
