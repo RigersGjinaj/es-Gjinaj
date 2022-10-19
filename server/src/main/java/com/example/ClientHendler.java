@@ -2,11 +2,8 @@ package com.example;
 
 import java.net.Socket;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class ClientHendler extends Thread {
@@ -26,7 +23,6 @@ public class ClientHendler extends Thread {
 
             // per ascoltare
             BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 
             pr.println("Ciao dimmi il tuo nome?");
             String nome = br.readLine();
