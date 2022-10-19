@@ -22,6 +22,21 @@ public final class Client {
         System.out.println(br.readLine());
         pr.println(tastiera.readLine());
         System.out.println(br.readLine());
+
+        Boolean ciclo = true;
+        String controllo = br.readLine();
+        controllo = controllo.replace('@', '\n');
+        System.out.println(controllo);
+
+        while (ciclo) {
+            String invia = tastiera.readLine();
+            int scelta = Integer.parseInt(invia);
+            pr.println(scelta);
+            System.out.println(br.readLine() + " ecco la risposta");
+            if (scelta == 4) {
+                ciclo = false;
+            }
+        }
         s.close();
     }
 }
