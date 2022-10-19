@@ -19,14 +19,9 @@ public final class Client {
         // per la tastiera
         BufferedReader tastiera = new BufferedReader(new InputStreamReader(System.in));
 
-        pr.println("Eccomi");
-        System.out.println(br.readLine()); // rivevo: benvenuti dammi il tuo peso
-        pr.println(tastiera.readLine()); // leggo da tastiera il peso e lo invio
-        System.out.println(br.readLine()); // ricevo: dammi l'altezza
-        pr.println(tastiera.readLine()); // leggo da tastiera l'altezza e la invio
-        System.out.println(br.readLine()); // rivevo il BMI
-        pr.println("Grazie e ciao");
-
+        System.out.println(br.readLine());
+        pr.println(tastiera.readLine());
+        System.out.println(br.readLine());
         s.close();
     }
 }
