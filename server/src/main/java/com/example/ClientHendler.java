@@ -57,7 +57,6 @@ public class ClientHendler extends Thread {
                         break;
                 }
             }
-            s.close();
 
         } catch (Exception e) {
             // TODO: handle exception
