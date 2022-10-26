@@ -32,11 +32,11 @@ public final class Client {
             String invia = tastiera.readLine();
             int scelta = Integer.parseInt(invia);
             pr.println(scelta);
-            System.out.println(br.readLine() + " ecco la risposta");
-            if (scelta == 0) {
+            System.out.println(br.readLine());
+            if (scelta == 0 || scelta == 4) {
                 ciclo = false;
             }
+
         }
-        s.close();
     }
 }

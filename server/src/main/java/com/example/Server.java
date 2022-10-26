@@ -2,9 +2,11 @@ package com.example;
 
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public final class Server {
     private static String nomeServer = "serverGjinaj";
+    private static ArrayList<ClientHendler> collegati = new ArrayList<ClientHendler>();
 
     public static void main(String[] args) {
         try {
@@ -13,12 +15,14 @@ public final class Server {
             for (;;) {
                 Socket s = ss.accept();
                 System.out.println("Client connesso");
-                ClientHendler c = new ClientHendler(s, nomeServer);
+                ClientHendler c = new ClientHendler(s, nomeServer, collegati);
+                collegati.add(c);
                 c.start();
             }
 
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println(e.getMessage());
         }
     }
+
 }
