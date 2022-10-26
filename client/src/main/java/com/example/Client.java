@@ -33,7 +33,7 @@ public final class Client {
             int scelta = Integer.parseInt(invia);
             pr.println(scelta);
             System.out.println(br.readLine() + " ecco la risposta");
-            if (scelta == 3) {
+            if (scelta == 0) {
                 ciclo = false;
             }
         }
